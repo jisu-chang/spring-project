@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbc.pet.user.UserService">
+<select id="idcheck" parameterType="String" resultType="int">
+  <!-- parameterType="String" => 아이디:문자열 
+		resultType="int" => count: 정수형 -->
+	select count(*) from user1 where user_login_id=#{user_login_id}
+</select>
+
+<insert id="insertsignup" parameterType="com.mbc.pet.user.UserDTO">
+	insert into user1 (user_id,user_login_id,password,name,phone,email,profileimg,rank,user_role,grape_count)
+	values(user_id_seq.nextval,#{user_login_id},#{password},#{name},#{phone},#{email,jdbcType=VARCHAR},
+	#{profileimg,jdbcType=VARCHAR},#{rank,jdbcType=VARCHAR},#{user_role,jdbcType=VARCHAR},#{grape_count,jdbcType=INTEGER})
+</insert>
+
+<select id="pwsave" parameterType="String" resultType="String">
+	select password
+	from user1
+	where user_login_id = #{user_login_id}
+</select>
+
+<select id="selectUserByLoginId" resultType="com.mbc.pet.user.UserDTO">
+	select user_id, user_login_id, name, phone, email, profileimg, rank, user_role, grape_count
+	from user1 where user_login_id=#{user_login_id}
+</select>
+
+<select id="editid" resultType="com.mbc.pet.user.UserDTO">
+	select user_id, user_login_id, password, name, phone, email, profileimg, rank, grape_count
+	from user1 where user_login_id=#{user_login_id}
+</select>
+
+<update id="updateProfile" parameterType="com.mbc.pet.user.UserDTO">
+	update user1 set 
+	password=#{password, jdbcType=VARCHAR}, 
+	name=#{name, jdbcType=VARCHAR}, 
+	phone=#{phone, jdbcType=VARCHAR},
+    email=#{email, jdbcType=VARCHAR}, 
+    profileimg=#{profileimg,jdbcType=VARCHAR},
+    rank=#{rank,jdbcType=VARCHAR}, 
+    grape_count=#{grape_count,jdbcType=INTEGER}
+    where user_login_id = #{user_login_id, jdbcType=VARCHAR}
+</update>
+
+<!-- 아이디 찾기 -->
+<select id="findIdByEmailName" parameterType="map" resultType="String">
+	select user_login_id from user1 
+	where email=#{email} and name=#{name} and phone=#{phone}
+</select>
+
+<!-- 비밀번호 찾기 -->
+<select id="UserByLoginIdAndEmail" parameterType="map" resultType="com.mbc.pet.user.UserDTO">
+	select * from user1
+	where user_login_id=#{user_login_id, jdbcType=VARCHAR} 
+	and email=#{email, jdbcType=VARCHAR}
+</select>
+
+<!-- 비밀번호 업데이트 -->
+<update id="updatePassword">
+	update user1 set password=#{password, jdbcType=VARCHAR} 
+	where user_login_id=#{user_login_id, jdbcType=VARCHAR}
+</update>
+
+<!-- 비밀번호 수정 -->
+<select id="userPwChange" resultType="com.mbc.pet.user.UserDTO">
+	select password from user1
+	where user_login_id=#{user_login_id}
+</select>
+
+<update id="updatePw">
+	update user1 set password = #{password}	where user_login_id=#{user_login_id}
+</update>
+
+<!-- 포도알 적립용!!! dasom -->
+<update id="plusGrapeCount" parameterType="int">
+  UPDATE user1
+  SET grape_count = grape_count + 1
+  WHERE user_id = #{user_id}
+</update>
+
+<!-- 회원 포도알 총 갯수 조회 dasom -->
+<select id="get_user_grapes" resultType="int">
+	select grape_count
+	from user1
+	where user_id = #{user_id}
+</select>
+
+<update id="quiz_grapes">
+    UPDATE user1
+    SET grape_count = grape_count + #{grape}
+    WHERE user_id = #{user_id}
+</update>
+
+<select id="grape_update" resultType="com.mbc.pet.user.UserDTO">
+    SELECT * FROM user1 WHERE user_login_id = #{login_id}
+</select>
+
+<select id="get_all_users" resultType="com.mbc.pet.user.UserDTO">
+	select user_id, user_login_id, grape_count from user1
+	order by grape_count desc
+</select>
+
+<!-- diary_detail 포도알 갯수 출력용 -->
+<select id="getUserById" resultType="com.mbc.pet.user.UserDTO" parameterType="int">
+	  SELECT * 
+	  FROM user1
+	  WHERE user_id = #{user_id}
+</select>
+
+<!-- 게시판 자세히보기 프로필 이미지 가져오기 -->
+<select id="selectUserById" resultType="com.mbc.pet.user.UserDTO" parameterType="int">
+	select user_id, user_login_id, password, name, phone, email, profileimg, rank, user_role, grape_count
+    from user1 where user_id = #{user_id}
+</select>
+
+<!-- 이메일 중복 체크용 -->
+<select id="emailCheck" resultType="int" parameterType="String">
+  select count(*) from user1 where email = #{email}
+</select>
+
+<!-- 회원정보 수정 시 이메일 중복검사 -->
+<select id="emailCheckForUpdate" parameterType="map" resultType="int">
+	select count(*) from user1 where email = #{email}
+	and user_login_id != #{user_login_id}
+</select>
+</mapper>
