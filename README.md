@@ -4,7 +4,9 @@ Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.
 초기에는 Spring MVC 구조로 시작하여, 이후 Spring Boot 기반으로 확장하며  
 소셜 로그인, 회원 기능 개선, 반응형 UI 등 실제 서비스 수준으로 기능을 발전시켰습니다.
 
+
 ---
+
 
 ## 📁 프로젝트 구성
 
@@ -12,11 +14,13 @@ Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.
 - `PetLog_Boot/` : Spring Boot 기반 개인 리팩토링 및 기능 확장 버전
 - `6조_PetLog_박다솜_창지수.pdf` : 팀 보고서
 
+
 ---
+
 
 ## 📌 주요 기능
 
-### ✅ 공통 기능 (Spring & Boot)
+### 공통 기능 (Spring & Boot)
 - 회원가입 / 로그인 / 로그아웃
 - 게시판 기능 (공지사항 / 커뮤니티)
 - 퀴즈 시스템 (정답 판단, 풀이 시간 기록)
@@ -27,7 +31,8 @@ Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.
 - 관리자 기능 (QnA 답변, 회원/게시판 관리)
 - CSS 기반 UI 구성 및 디자인 리팩토링
 
-### 🚀 Spring Boot에서 확장된 기능
+
+### 💫⭐ Spring Boot에서 확장된 기능
 - **카카오 로그인** (OAuth2 인증 연동)
 - **회원 탈퇴 기능** (단순 삭제가 아닌 처리 로직 포함)
 - **로그인 사용자 기반 데이터 필터링**
@@ -38,7 +43,9 @@ Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.
   - 해상도별 스타일 적용(CSS 미디어 쿼리)
 - 전체 CSS 모듈화 및 스타일 통일성 개선
 
+
 ---
+
 
 ## 🛠 기술 스택
 
@@ -53,7 +60,9 @@ Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.
 | IDE               | Eclipse / IntelliJ IDEA            | IntelliJ IDEA                    |
 | Version Control   | Git, GitHub                        | Git, GitHub                      |
 
+
 ---
+
 
 ## 🙋‍♀️ 맡은 역할 및 구현 내용
 
@@ -70,7 +79,9 @@ Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.
 - **반응형 UI 개발**: 모바일 친화적 레이아웃, CSS 미디어 쿼리 활용
 - 전체 CSS 모듈화 및 UI 리팩토링 (폰트, 컬러, 버튼 통일 등)
 
+
 ---
+
 
 ## ✨ 느낀 점
 
@@ -80,8 +91,9 @@ Spring과 Spring Boot 각각의 개발 방식과 장단점을 직접 체험하�
 유지보수성과 확장성에 대해 깊이 고민할 수 있는 계기가 되었습니다.  
 앞으로는 REST API 설계, 테스트 코드 작성 등으로 개발 역량을 더 넓히고 싶습니다.
 
+
 ---
 
 ## 📄 프로젝트 보고서(PDF)
 
-- `6조_PetLog_박다솜_창지수.pdf`
+-[6조 PetLog_박다솜,창지수.pdf 열기](./6조%20PetLog_%EB%B0%95%EB%8B%A4%EC%86%9C,%EC%B0%BD%EC%A7%80%EC%88%98.pdf)
