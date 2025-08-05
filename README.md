@@ -5,9 +5,6 @@
 - `6조_PetLog_박다솜_창지수.pdf` : 팀 보고서
 
   
-
-# PetLog (Spring MVC)
-
 본 프로젝트는 **Spring MVC 기반** 프로젝트 입니다.  
 최신 버전은 [Spring Boot 프로젝트](https://github.com/jisu-chang/springboot-project)에서 확인하실 수 있습니다.
 
