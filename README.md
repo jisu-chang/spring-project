@@ -1,18 +1,26 @@
-# 🐶 PetLog Web Project (Spring + Spring Boot 통합)
-
-Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.  
-초기에는 Spring MVC 구조로 시작하여, 이후 Spring Boot 기반으로 확장하며  
-소셜 로그인, 회원 기능 개선, 반응형 UI 등 실제 서비스 수준으로 기능을 발전시켰습니다.
-
-
----
-
-
 ## 📁 프로젝트 구성
 
 - `PetLog/` : Spring MVC 기반 팀 프로젝트
 - `PetLog_Boot/` : Spring Boot 기반 리팩토링 및 기능 확장 버전
 - `6조_PetLog_박다솜_창지수.pdf` : 팀 보고서
+
+  
+
+# PetLog (Spring MVC)
+
+본 프로젝트는 **Spring MVC 기반** 프로젝트 입니다.  
+최신 버전은 [Spring Boot 프로젝트](https://github.com/jisu-chang/springboot-project)에서 확인하실 수 있습니다.
+
+
+
+---
+
+
+## 🐶 PetLog Web Project (Spring + Spring Boot 통합)
+
+Java와 Spring Framework 기반으로 개발한 웹 애플리케이션입니다.  
+초기에는 Spring MVC 구조로 시작하여, 이후 Spring Boot 기반으로 확장하며  
+소셜 로그인, 회원 기능 개선, 반응형 UI 등 실제 서비스 수준으로 기능을 발전시켰습니다.
 
 
 ---
@@ -100,6 +108,8 @@ PC 화면
 - **반응형 웹 UI 구현 추가**: 모바일 대응 중심으로 레이아웃 설계 및 CSS 미디어 쿼리 적용
 - 전체 CSS 모듈화 및 UI 리팩토링 (폰트, 컬러, 버튼 통일 등)
 
+
+--
 
 
 ## 🎯 추가 개선 및 보완 의지
